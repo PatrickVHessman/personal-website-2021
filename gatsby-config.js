@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby WordPress Starter`,
-    description: `Kick off your next, great Gatsby project with this WordPress starter.`,
-    author: `@tomphill`,
+    title: `Patrick V. Hessman`,
+    description: `Portfolio and resume website.`,
+    author: `Patrick V. Hessman`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,14 +24,14 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     {
       resolve: "gatsby-source-wordpress",
       options: {
         minimizeDeprecationNotice: true,
-        baseUrl: "gatsby-wordpress-course.local",
+        baseUrl: "patrickvhessman.com/backend",
         protocol: "http",
         hostingWPCOM: false,
         useACF: false,
@@ -46,6 +46,9 @@ module.exports = {
           "**/tags",
           "**/taxonomies",
           "**/users",
+          "**/*/*/portfolio",
+          "**/portfolio",
+          "**/resume",
         ],
       },
     },

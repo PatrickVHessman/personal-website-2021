@@ -1,11 +1,13 @@
 {
-  "name": "wordpress-starter",
+  "name": "personal-website-2021",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby & WordPress",
+  "description": "Patrick V. Hessman's personal website",
   "version": "0.1.0",
-  "author": "Tom Phillips <info@tomphill.co.uk>",
+  "author": "Patrick V. Hessman <patrickvhessman@gmail.com>",
   "dependencies": {
+    "ftp-deploy": "^2.4.1",
     "gatsby": "^2.24.50",
+    "gatsby-cli": "^3.6.0",
     "gatsby-image": "^2.4.16",
     "gatsby-plugin-manifest": "^2.4.24",
     "gatsby-plugin-offline": "^3.2.24",
@@ -14,10 +16,15 @@
     "gatsby-source-filesystem": "^2.3.25",
     "gatsby-source-wordpress": "^3.3.30",
     "gatsby-transformer-sharp": "^2.5.13",
+    "nes-react": "^1.0.2",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-bootstrap": "^1.6.1",
+    "react-collapse": "^5.1.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-reveal": "^1.2.2",
+    "react-scroll": "^1.8.2"
   },
   "devDependencies": {
     "prettier": "2.1.0"
@@ -33,13 +40,14 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "gatsby clean && gatsby build && node ftp.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tomphill/wordpress-starter"
+    "url": "https://github.com/PatrickVHessman/personal-website-2021"
   },
   "bugs": {
-    "url": "https://github.com/tomphill/wordpress-starter/issues"
+    "url": "https://github.com/PatrickVHessman/personal-website-2021"
   }
 }

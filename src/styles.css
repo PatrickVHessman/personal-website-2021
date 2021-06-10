@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+#___gatsby {
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15;
+    max-width: 1024px;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  header {
+    z-index: 11;
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    left: 0;
+    top: 0;
+  }
+  
+  #___gatsby a,
+  #___gatsby a,
+  .pseudoLink,
+  header a {
+    color: #ce372b;
+    transition: color 0.5s ease;
+  }
+  
+  #___gatsby a,
+  #___gatsby a:hover,
+  .pseudoLink:hover, header a {
+    color: #ff001d;
+    transition: color 0.5s ease;
+    text-decoration: none;
+    /* cursor: url(https://unpkg.com/nes.css/assets/cursor-click.png), pointer; */
+  }
+  
+  #___gatsby h4 {
+    font-size: 14px;
+  }
+  
+  #___gatsby h5 {
+    font-size: 0.9rem;
+  }
+  
+  #___gatsby li {
+    margin-bottom: 5px;
+  }
+  
+  .main, main {
+    position: relative;
+    z-index: 10;
+    margin-top: 95px;
+  }
+
+  .headline {
+    color: #ce372b;
+    box-sizing: border-box;
+    font-size: 1.5em;
+  }
+  
+  .avatar {
+    max-width: 100px;
+  }
+  
+  .awsLogo {
+    text-align: center;
+    margin-bottom: 10px;
+    /* image-rendering: pixelated; */
+  }
+  
+  .col2ListDiv ul {
+    columns: 4;
+    -webkit-columns: 4;
+    -moz-columns: 4;
+  }
+  
+  .main .nes-list.is-circle li::before {
+    color: #fff;
+  }
+  
+  .font12 {
+    font-size: 12px;
+  }
+  
+  .main .nes-container.is-dark::before {
+    background-color: rgb(33, 37, 41, 0.7);
+  }
+  
+  .nes-btn:hover,
+  .nes-btn {
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+  }
+  
+  .scroll-btn {
+    position: fixed !important;
+    bottom: 1rem;
+    right: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,.6);
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  
+  .scroll-btn > span {
+    display: block;
+    transform: rotateZ(90deg);
+  }
+  
+  .resumeItems {
+    padding-bottom: 5px;
+    border-bottom: 2px white solid;
+    margin-bottom: 1rem;
+  }
+  
+  .resumeItems:last-of-type {
+    border-bottom: none;
+  }
+  
+  .waterfallGrid {
+    -webkit-column-count: 3;
+    -webkit-column-gap: 10px;
+    -webkit-column-fill: auto;
+    -moz-column-count: 3;
+    -moz-column-gap: 10px;
+    -moz-column-fill: auto;
+    column-count: 3;
+    column-gap: 15px;
+    column-fill: auto;
+  }
+  
+  .waterfallGrid .react-reveal {
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  .portfolioButtonContainer {
+    margin: 20px auto 20px auto;
+    text-align: center;
+  }
+  
+  .educationSection p {
+    margin-bottom: 5px;
+  }
+  
+  .educationSection img {
+    margin-bottom: 1rem;
+    max-width: 200px;
+  }
+  
+  .opacityHover {
+    transition: opacity 0.5s ease;
+  }
+  
+  .opacityHover:hover {
+    transition: opacity 0.5s ease;
+    opacity: 0.7;
+  }
+  
+  /* Background Elements */
+  
+  .space-bg,
+  .bg-elements {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .stars {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-animation: spin 200s linear infinite;
+    -moz-animation: spin 200s linear infinite;
+    animation: spin 200s linear infinite;
+  }
+  
+  .farPlanets {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    width: 100%;
+    animation: slide 120s linear infinite;
+    -webkit-animation: slide 120s linear infinite;
+    -moz-animation: slide 120s linear infinite;
+  }
+  
+  .ringPlanet,
+  .bigPlanet {
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    width: 100%;
+  }
+  
+  .ringPlanet {
+    left: 0;
+  }
+
+  .realPicture {
+    width: 100%;
+    border-radius: 100%;
+    max-width: 350px
+  }
+  
+  
+  @media (max-width: 992px) {
+    .waterfallGrid, .col2ListDiv ul {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+
+    header {
+      position: relative;
+    }
+
+    .avatar {
+      float: none;
+    }
+    .col2ListDiv ul, .waterfallGrid {
+      columns: 1;
+      -webkit-columns: 1;
+      -moz-columns: 1;
+    }
+    body {
+      background-image: url("https://patrickvhessman.s3.amazonaws.com/web+samples/space-bg.png");
+      background-size: cover;
+    }
+    /* .main .nes-container.is-dark::before {
+      background-color: rgb(33, 37, 41);
+    } */
+  
+    .resumeItems div, .mobileCollapse {
+      display: block !important;
+    }
+  
+    /* .ringPlanet,
+    .bigPlanet,
+    .farPlanets,
+    .stars,
+    .space-bg {
+      display: none;
+    } */
+  
+    .ringPlanet, .bigPlanet, .stars {
+      width: auto;
+  }
+  
+    .ringPlanet {
+      left: -100px;
+      bottom: 100px;
+      top: auto;
+  }
+  
+  .bigPlanet {
+    right: -450px;
+      top: 255px;
+  }
+  
+  }
+  
+  
+  /* Animations */
+  
+  @-moz-keyframes spin {
+    100% {
+      -moz-transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes slide {
+    0% {
+      -webkit-transform: translate3d(2000px, 0, 0);
+      -moz-transform: translate3d(2000px, 0, 0);
+      transform: translate3d(2000px, 0, 0);
+    }
+    100% {
+      -webkit-transform: translate3d(-2000px, 0, 0);
+      -moz-transform: translate3d(-2000px, 0, 0);
+      transform: translate3d(-2000px, 0, 0);
+    }
+  }
+  
+  @keyframes rocketFlight {
+    0% {
+      -webkit-transform: translate3d(-2000px, 0, 0);
+      -moz-transform: translate3d(-2000px, 0, 0);
+      transform: translate3d(-2000px, 0, 0);
+    }
+    100% {
+      -webkit-transform: translate3d(2000px, 0, 0);
+      -moz-transform: translate3d(2000px, 0, 0);
+      transform: translate3d(2000px, 0, 0);
+    }
+  }

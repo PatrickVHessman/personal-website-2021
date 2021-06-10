@@ -11,21 +11,16 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+  const site = useStaticQuery(
     graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
+      {wordpressSiteMetadata {
+    name
+    description
+  }}
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.wordpressSiteMetadata.description
 
   return (
     <Helmet
@@ -33,7 +28,7 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${metaDescription}`}
       meta={[
         {
           name: `description`,
@@ -54,10 +49,6 @@ function SEO({ description, lang, meta, title }) {
         {
           name: `twitter:card`,
           content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
         },
         {
           name: `twitter:title`,

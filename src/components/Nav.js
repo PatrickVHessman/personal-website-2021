@@ -36,14 +36,21 @@ const Nav = () => {
       </Button>
       <Button
         to="resume"
-        onClick={() => scrollTo("about")}
+        onClick={() => scrollTo("resume")}
         style={{ color: "#212529" }}
       >
         Resume
       </Button>
       <Button
+        to="blogs"
+        onClick={() => scrollTo("blogs")}
+        style={{ color: "#212529" }}
+      >
+        Blog Posts
+      </Button>
+      <Button
         to="about"
-        onClick={() => scrollTo("links")}
+        onClick={() => scrollTo("about")}
         style={{ color: "#212529" }}
       >
         About
@@ -58,7 +65,7 @@ const Nav = () => {
       
       <button 
       type="button" 
-      class="nes-btn is-error scroll-btn active"
+      className="nes-btn is-error scroll-btn active"
       to="top"
         onClick={() => scrollTo("top")}
       ><span>&lt;</span></button>

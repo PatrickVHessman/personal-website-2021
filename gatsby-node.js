@@ -1,7 +1,38 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
-// You can delete this file if you're not using it
+exports.createPages = async function ({ actions, graphql }) {
+    const { data } = await graphql(
+        `
+        {
+            allWordpressPost {
+              nodes {
+                title
+                content
+                excerpt
+                slug
+                wordpress_id
+                date(formatString: "MMM Do YYYY")
+                featured_media {
+                  source_url
+                }
+                acf {
+                  description
+                }
+              }
+            }
+          }
+        `)
+    data.allWordpressPost.nodes.forEach(node => {
+        const slug = node.slug
+      actions.createPage({
+        path: `blog/${slug}`,
+        component: require.resolve(`./src/pages/post.js`),
+        context: { 
+            slug: slug,
+            title: node.title,
+            content: node.content,
+            id: node.wordpress_id,
+            excerpt: node.excerpt,
+            date: node.date
+         },
+      })
+    })
+  }

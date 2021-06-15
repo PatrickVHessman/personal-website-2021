@@ -1,5 +1,5 @@
 import React from "react"
-// import { Link } from "gatsby"
+import {graphql, StaticQuery } from 'gatsby';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -12,6 +12,7 @@ import Skills from '../components/Skills';
 import Education from '../components/Education';
 import Links from '../components/Links';
 import About from '../components/About';
+import BlogList from '../components/BlogList';
 
 
 import '../styles.css';
@@ -33,6 +34,24 @@ const IndexPage = () => (
 
     <div name="resume" />
     <Resume />
+
+    <div name="blogs" />
+    <StaticQuery
+query={graphql`{
+  allWordpressPost {
+    nodes {
+      title
+      slug
+      id
+      featured_media {
+        source_url
+      }
+      excerpt
+      date(formatString: "MMM Do YYYY")
+    }
+  }
+}`}
+render={props => <BlogList posts={props.allWordpressPost.nodes} /> } />
 
     <div name="about" />
     <About />

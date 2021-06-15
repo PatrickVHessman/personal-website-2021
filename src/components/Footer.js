@@ -26,7 +26,7 @@ const Footer = () => {
         .
         {" | "}
         <a
-          href="https://github.com/PatrickVHessman/personal-website-2021"
+          href="https://github.com/PatrickVHessman/personal-website-2021/tree/master"
           target="_blank"
           rel="noopener noreferrer"
         >

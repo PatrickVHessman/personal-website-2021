@@ -4,8 +4,7 @@ import ResumeItem from "./ResumeItem";
 import {graphql, StaticQuery } from 'gatsby';
 
 const Resume = () => {
-  return (
-    <StaticQuery
+  return ( <StaticQuery
     query={graphql`{
   allWordpressWpResume {
     nodes {
@@ -24,14 +23,13 @@ const Resume = () => {
       <div className="font12">
         {props.allWordpressWpResume.nodes.map((item, index) => {
           return (
-            <div className="resumeItems">
+            <div className="resumeItems" key={index}>
               <ResumeItem item={item} key={index} />
             </div>
           );
         })}
       </div>
-    </Container>}
-    ></StaticQuery>
+    </Container>} />
   );
 };
 

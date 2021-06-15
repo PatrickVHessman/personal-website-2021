@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import { Container } from "nes-react";
 import Col from "./Col";
 import Row from "./Row";
-import Modal from "react-bootstrap/Modal";
 
 import msuLogo from "../images/MSU-horiz.png";
 import awsLogo from "../images/aws-logo.png";
 import awsCert from "../images/aws-cert.png";
 
 const Education = () => {
-  const [showModal, toggleModal] = useState(false);
 
   return (
     <Container title="Education and Certifications" dark>

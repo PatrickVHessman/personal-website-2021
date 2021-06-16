@@ -14,9 +14,6 @@ import Links from '../components/Links';
 import About from '../components/About';
 import BlogList from '../components/BlogList';
 
-
-import '../styles.css';
-
 const IndexPage = () => (
   <Layout className="App">
     <SEO title="Patrick V. Hessman" description="Front End/Full Stack Developer" />
@@ -35,7 +32,7 @@ const IndexPage = () => (
     <div name="resume" />
     <Resume />
 
-    <div name="blogs" />
+    <div name="blogs" id="blogs" /> 
     <StaticQuery
 query={graphql`{
   allWordpressPost {
@@ -51,7 +48,7 @@ query={graphql`{
     }
   }
 }`}
-render={props => <BlogList posts={props.allWordpressPost.nodes} /> } />
+render={props => <BlogList posts={props.allWordpressPost.nodes} postsPerPage={2} source="index" /> } />
 
     <div name="about" />
     <About />

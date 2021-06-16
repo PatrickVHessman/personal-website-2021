@@ -22,17 +22,22 @@ exports.createPages = async function ({ actions, graphql }) {
         `)
     data.allWordpressPost.nodes.forEach(node => {
         const slug = node.slug
+        const httpReplace = node.content.replace(/http:/g, "https:");
       actions.createPage({
         path: `blog/${slug}`,
         component: require.resolve(`./src/pages/post.js`),
         context: { 
             slug: slug,
             title: node.title,
-            content: node.content,
+            content: httpReplace,
             id: node.wordpress_id,
             excerpt: node.excerpt,
             date: node.date
          },
       })
-    })
+    });
+    // createRedirect({
+    //   fromPath: `/blog`,
+    //   toPath: `/#blogs`,
+    // });
   }

@@ -13,10 +13,49 @@ import Education from '../components/Education';
 import Links from '../components/Links';
 import About from '../components/About';
 import BlogList from '../components/BlogList';
+import { Helmet } from "react-helmet";
+import SocialBanner from '../images/social-share-banner.png';
 
 const IndexPage = () => (
   <Layout className="App">
     <SEO title="Patrick V. Hessman" description="Front End/Full Stack Developer" />
+
+    <Helmet
+      meta={[
+        {
+          property: `og:title`,
+          content: "Patrick V. Hessman",
+        },
+        {
+          property: `og:description`,
+          content: "Front End/Full Stack Developer",
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          name: `twitter:creator`,
+          content: "Patrick V. Hessman",
+        },
+        {
+          name: `twitter:title`,
+          content: "Patrick V. Hessman",
+        },
+        {
+          name: `twitter:description`,
+          content: "Front End/Full Stack Developer",
+        },
+        {
+          property: "og:image",
+          content: SocialBanner,
+        },
+        {
+          name: "twitter:card",
+          content: SocialBanner,
+        },
+      ]}
+    />
 
     <Overview />
     <Nav />
